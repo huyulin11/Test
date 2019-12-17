@@ -1,0 +1,39 @@
+package com.kaifantech.util.socket.netty.client;
+
+import com.calculatedfun.util.AppTool;
+import com.calculatedfun.util.msg.AppMsg;
+import com.kaifantech.bean.iot.client.IotClientBean;
+import com.kaifantech.cache.manager.AppCache;
+import com.kaifantech.init.sys.params.KfTestCacheKeys;
+import com.kaifantech.util.hex.AppByteUtil;
+import com.kaifantech.util.thread.ThreadTool;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+
+public class KfTestAutoDoorNettyClient extends KfTestAbstractNettyClient {
+	private int seq = 0;
+
+	public KfTestAutoDoorNettyClient(IotClientBean iotClientBean) {
+		super(iotClientBean);
+		getHeartBeat().setSend(false);
+	}
+
+	public void dealData(ChannelHandlerContext ctx, ByteBuf in) {
+		String msg = AppByteUtil.getHexStrFrom(in);
+		if (!AppTool.isNull(msg) && msg.length() != 14) {
+			AppCache.worker().hset(KfTestCacheKeys.autoDoorMsgList(getIotClientBean().getId()), "" + seq++, msg);
+			AppCache.worker().hset(KfTestCacheKeys.autoDoorMsgKey(), "" + getIotClientBean().getId(), msg);
+		}
+	}
+
+	public synchronized AppMsg sendCmd(String innerCmd) {
+		if (!isConnected()) {
+			return AppMsg.fail();
+		}
+		ThreadTool.sleep(200);
+		AppMsg appMsg = super.sendCmdLao(innerCmd);
+		AppCache.worker().hset(KfTestCacheKeys.autoDoorCmd(getIotClientBean().getId()), "" + seq++, appMsg.getMsg());
+		return appMsg;
+	}
+}
