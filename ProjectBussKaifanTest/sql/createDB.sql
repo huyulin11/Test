@@ -1,5 +1,5 @@
-CREATE DATABASE `kf_lao_dbwy__conf`;
-CREATE DATABASE `kf_lao_dbwy_acs`;
-CREATE DATABASE `kf_lao_dbwy_agv`;
-CREATE DATABASE `kf_lao_dbwy_iot`;
-CREATE DATABASE `kf_lao_dbwy_wms`;
+CREATE DATABASE `kf_test__conf`;
+CREATE DATABASE `kf_test_acs`;
+CREATE DATABASE `kf_test_agv`;
+CREATE DATABASE `kf_test_iot`;
+CREATE DATABASE `kf_test_wms`;
