@@ -25,7 +25,7 @@ import com.kaifantech.component.service.taskexe.add.ITaskexeAddService;
 import com.kaifantech.component.service.taskexe.info.TaskexeInfoService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
 import com.kaifantech.init.sys.params.AppSysParameters;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvCtrlType;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvMoveStatus;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
@@ -36,14 +36,14 @@ import com.kaifantech.util.thread.ThreadTool;
 @RequestMapping("/de/acs/")
 public class KfTestRestController {
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_TASKEXE_ADD_SERVICE)
+	@Qualifier(DefaultQualifier.DEFAULT_TASKEXE_ADD_SERVICE)
 	private ITaskexeAddService taskexeAddService;
 
 	@Autowired
 	private AgvStatusService agvStatusService;
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_IOT_CLIENT_SERVICE)
+	@Qualifier(DefaultQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	private IIotClientService iotClientService;
 
 	@Autowired

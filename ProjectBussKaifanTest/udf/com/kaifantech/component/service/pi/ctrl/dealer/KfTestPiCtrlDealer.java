@@ -14,7 +14,7 @@ import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.bean.taskexe.FancyTaskexeBean;
 import com.kaifantech.component.dao.agv.info.AgvInfoDao;
 import com.kaifantech.component.service.pi.ctrl.work.FancyPiInfoService;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.agv.msg.PiCommand;
 import com.kaifantech.util.log.AppFileLogger;
 
@@ -29,7 +29,7 @@ public class KfTestPiCtrlDealer implements IPiCtrlDealer {
 	private Map<Object[], Object[]> clashAreasRev = null;
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_AGV_INFO_DAO)
+	@Qualifier(DefaultQualifier.DEFAULT_AGV_INFO_DAO)
 	private AgvInfoDao agvInfoDao;
 
 	public PiCommand check2Agvs(IotClientBean one, IotClientBean another) throws Exception {

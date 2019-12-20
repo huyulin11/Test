@@ -8,11 +8,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.kaifantech.bean.iot.client.IotClientBean;
-import com.kaifantech.init.sys.qualifier.KfTestSystemQualifier;
+import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.calculatedfun.util.AppTool;
 
-@Service(KfTestSystemQualifier.IOT_CLIENT_SERVICE)
+@Service(KfTestQualifier.IOT_CLIENT_SERVICE)
 public class KfTestIotClientService extends AcsIotClientService {
 	private List<IotClientBean> agvCacheList = new ArrayList<>();
 

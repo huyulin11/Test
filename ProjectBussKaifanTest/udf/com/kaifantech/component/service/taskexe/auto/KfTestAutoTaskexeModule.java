@@ -19,7 +19,7 @@ import com.kaifantech.component.service.taskexe.singletype.FancyTaskexeToInitDea
 import com.kaifantech.component.service.taskexe.singletype.FancyTaskexeTransportDealer;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvSiteStatus;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
 import com.kaifantech.util.log.AppFileLogger;
@@ -46,7 +46,7 @@ public class KfTestAutoTaskexeModule implements IAutoTaskexeModule {
 	private IFancyCurrentSiteService taskSiteInfoService;
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_AGV_INFO_DAO)
+	@Qualifier(DefaultQualifier.DEFAULT_AGV_INFO_DAO)
 	private AgvInfoDao agvInfoDao;
 
 	@Autowired

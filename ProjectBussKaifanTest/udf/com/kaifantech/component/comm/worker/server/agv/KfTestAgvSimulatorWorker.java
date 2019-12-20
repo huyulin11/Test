@@ -11,19 +11,19 @@ import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.comm.worker.server.IServerWorker;
 import com.kaifantech.component.service.iot.client.IIotClientService;
 import com.kaifantech.init.sys.params.AppSysParameters;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
-import com.kaifantech.init.sys.qualifier.KfTestSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.serial.LaoAgvZigBeeNettySerialServer;
 import com.kaifantech.util.socket.IConnect;
 import com.kaifantech.util.socket.netty.server.fancy.FancyAgvNettyServer;
 
-@Service(KfTestSystemQualifier.AGV_SERVER_WORKER)
+@Service(KfTestQualifier.AGV_SERVER_WORKER)
 public class KfTestAgvSimulatorWorker implements IServerWorker {
 	private Map<Integer, IConnect> map = new HashMap<>();
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_IOT_CLIENT_SERVICE)
+	@Qualifier(DefaultQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	private IIotClientService iotClientService;
 
 	public synchronized void init() {

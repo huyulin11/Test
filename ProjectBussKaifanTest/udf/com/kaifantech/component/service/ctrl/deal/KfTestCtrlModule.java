@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
-import com.kaifantech.init.sys.qualifier.KfTestSystemQualifier;
+import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvMoveStatus;
 import com.kaifantech.util.thread.ThreadTool;
 
 /***
  * 描述任务从用户下达到发送AGV执行前的逻辑
  ***/
-@Service(KfTestSystemQualifier.CTRL_MODULE)
+@Service(KfTestQualifier.CTRL_MODULE)
 public class KfTestCtrlModule extends FancyCtrlModule {
 	protected void control(FancyAgvMsgBean agvMsgBean, IotClientBean agvBean) {
 		if (!AgvMoveStatus.CONTINUE.equals(agvInfoDao.getMoveStatus(agvBean.getId()))) {

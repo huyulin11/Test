@@ -21,7 +21,7 @@ import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.component.comm.manager.agv.IFancyAgvManager;
 import com.kaifantech.component.service.iot.client.IIotClientService;
 import com.kaifantech.component.service.tasksite.path.IFancyTaskexePathService;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.constants.cmd.FancyAgvCmdConstant;
 import com.kaifantech.util.log.AppFileLogger;
 import com.kaifantech.util.thread.ThreadTool;
@@ -39,7 +39,7 @@ public class ConTest {
 	private IFancyAgvManager agvManager;
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_IOT_CLIENT_SERVICE)
+	@Qualifier(DefaultQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	private IIotClientService iotClientService;
 
 	@Before

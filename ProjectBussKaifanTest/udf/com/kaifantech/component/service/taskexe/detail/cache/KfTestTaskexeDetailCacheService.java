@@ -11,14 +11,14 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.component.service.tasksite.info.ITaskSiteInfoService;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.constant.taskexe.FancyArrivedActType;
 import com.kaifantech.util.constants.cmd.FancyAgvCmdConstant;
 
 @Service
 public class KfTestTaskexeDetailCacheService implements IFancyTaskexeDetailCacheService {
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_TASK_SITE_INFO_SERVICE)
+	@Qualifier(DefaultQualifier.DEFAULT_TASK_SITE_INFO_SERVICE)
 	private ITaskSiteInfoService taskSiteInfoService;
 
 	private TreeMap<Integer, TreeMap<String, TreeMap<String, String>>> map = new TreeMap<>();

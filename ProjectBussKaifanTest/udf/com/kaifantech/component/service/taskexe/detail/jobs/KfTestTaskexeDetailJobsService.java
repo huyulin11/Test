@@ -9,14 +9,14 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
-import com.kaifantech.init.sys.qualifier.KfTestSystemQualifier;
+import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ArrivedActType;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
 
 /***
  * 描述任务从用户下达到发送AGV执行前的逻辑
  ***/
-@Service(KfTestSystemQualifier.TASKEXE_DETAIL_JOBS_SERVICE)
+@Service(KfTestQualifier.TASKEXE_DETAIL_JOBS_SERVICE)
 public class KfTestTaskexeDetailJobsService extends FancyTaskexeDetailJobsService {
 	protected List<TaskexeDetailBean> getJobs(TaskexeBean taskexeBean) throws Exception {
 		if (AgvTaskType.GOTO_INIT.equals(taskexeBean.getTasktype())) {

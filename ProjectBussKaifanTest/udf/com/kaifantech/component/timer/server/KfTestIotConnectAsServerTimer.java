@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
-import com.kaifantech.init.sys.qualifier.DefaultSystemQualifier;
+import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.util.seq.ThreadID;
 import com.kaifantech.util.thread.ThreadTool;
 
@@ -20,7 +20,7 @@ public class KfTestIotConnectAsServerTimer {
 	private final Logger logger = Logger.getLogger(KfTestIotConnectAsServerTimer.class);
 
 	@Autowired
-	@Qualifier(DefaultSystemQualifier.DEFAULT_AGV_SERVER_WORKER)
+	@Qualifier(DefaultQualifier.DEFAULT_AGV_SERVER_WORKER)
 	private IConnectWorker agvServerWorker;
 
 	public KfTestIotConnectAsServerTimer() {
