@@ -17,7 +17,7 @@ import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.msg.agv.FancyAgvMsgCatcher;
 import com.kaifantech.util.msg.agv.FancyAgvMsgGetter;
 import com.kaifantech.util.socket.IConnect;
-import com.kaifantech.util.socket.netty.client.KfTestClientFactory;
+import com.kaifantech.util.socket.factory.client.KfTestClientFactory;
 
 @Service(KfTestQualifier.AGV_CLIENT_WORKER)
 public class KfTestAgvClientWorker implements IConnectWorker {

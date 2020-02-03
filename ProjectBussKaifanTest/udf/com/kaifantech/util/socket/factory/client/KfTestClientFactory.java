@@ -1,4 +1,4 @@
-package com.kaifantech.util.socket.netty.client;
+package com.kaifantech.util.socket.factory.client;
 
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;

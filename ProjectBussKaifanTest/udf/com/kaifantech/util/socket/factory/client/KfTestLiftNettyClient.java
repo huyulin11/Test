@@ -1,4 +1,4 @@
-package com.kaifantech.util.socket.netty.client;
+package com.kaifantech.util.socket.factory.client;
 
 import com.calculatedfun.util.AppTool;
 import com.calculatedfun.util.msg.AppMsg;

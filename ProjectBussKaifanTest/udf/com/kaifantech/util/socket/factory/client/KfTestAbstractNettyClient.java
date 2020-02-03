@@ -1,9 +1,10 @@
-package com.kaifantech.util.socket.netty.client;
+package com.kaifantech.util.socket.factory.client;
 
 import com.calculatedfun.util.AppTool;
 import com.calculatedfun.util.msg.AppMsg;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.util.hex.AppByteUtil;
+import com.kaifantech.util.socket.netty.client.AbstractNettyByteClient;
 
 public abstract class KfTestAbstractNettyClient extends AbstractNettyByteClient {
 	public static final String ZIGBEE_SEND_DATA_TAIL = "FE";

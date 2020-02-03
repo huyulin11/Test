@@ -15,7 +15,7 @@ import com.kaifantech.init.sys.qualifier.DefaultQualifier;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.socket.IConnect;
-import com.kaifantech.util.socket.netty.client.KfTestClientFactory;
+import com.kaifantech.util.socket.factory.client.KfTestClientFactory;
 
 @Service(KfTestQualifier.AUTO_DOOR_CLIENT_WORKER)
 public class KfTestAutoDoorClientWorker implements IConnectWorker {
