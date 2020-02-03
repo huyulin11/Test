@@ -119,7 +119,7 @@ public class ZigBeeNettySerial extends SimpleChannelInboundHandler<ByteBuf> impl
 	public AppMsg sendCmd(String msg) {
 		AppMsg appMsg = new AppMsg();
 		try {
-			byte[] tosend = AppByteUtil.hexStringToBytes(msg);
+			byte[] tosend = AppByteUtil.hexToBytes(msg);
 			send(Unpooled.copiedBuffer(tosend));
 			appMsg.setSuccess(true);
 		} catch (Exception e) {
