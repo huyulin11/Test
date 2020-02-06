@@ -22,7 +22,7 @@ public class LaoAgvZigBeeNettySerialServer extends ZigBeeNettyServer {
 
 	private String getCurrentSite(Integer agvId) {
 		int siteid = Integer.parseInt(AppCache.worker().getOrInit(CacheKeys.simulatorCurrentSite(), "" + agvId, "1"));
-		return AppByteUtil.intToStr4(siteid);
+		return AppByteUtil.intToHex4Reverse(siteid);
 	}
 
 	private String getCurrentSpeed(Integer agvId) {

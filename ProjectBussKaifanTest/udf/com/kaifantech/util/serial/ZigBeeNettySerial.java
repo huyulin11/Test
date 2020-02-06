@@ -107,7 +107,7 @@ public class ZigBeeNettySerial extends SimpleChannelInboundHandler<ByteBuf> impl
 
 	public AppMsg sendCmdLao(String msg, IotClientBean iotClientBean) {
 		if (!AppTool.isNull(msg) && msg.length() % 2 == 0) {
-			msg = iotClientBean.getIp() + AppByteUtil.intToStr2(msg.length() / 2) + msg;
+			msg = iotClientBean.getIp() + AppByteUtil.intToHex2(msg.length() / 2) + msg;
 			msg = msg + AppByteUtil.xorStep2(msg).toUpperCase();
 			msg = ZIGBEE_SEND_DATA_HEADER + msg + ZIGBEE_SEND_DATA_TAIL;
 		}
