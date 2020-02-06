@@ -16,7 +16,7 @@ public abstract class KfTestAbstractNettyClient extends AbstractNettyByteClient 
 
 	public AppMsg sendCmdLao(String msg) {
 		if (!AppTool.isNull(msg) && msg.length() % 2 == 0) {
-			msg = AppByteUtil.int2Str2(msg.length() / 2) + msg;
+			msg = AppByteUtil.intToStr2(msg.length() / 2) + msg;
 			msg = msg + AppByteUtil.xorStep2(msg).toUpperCase();
 			msg = ZIGBEE_RECEIVE_DATA_HEADER + msg + ZIGBEE_SEND_DATA_TAIL;
 		}
