@@ -12,7 +12,7 @@ import com.calculatedfun.util.msg.AppMsg;
 import com.kaifantech.bean.info.agv.AgvInfoBean;
 import com.kaifantech.component.dao.agv.info.AgvInfoDao;
 import com.kaifantech.component.dao.agv.info.AgvOpChargeDao;
-import com.kaifantech.component.service.taskexe.singletype.FancyTaskexeChargeDealer;
+import com.kaifantech.component.service.taskexe.singletype.FancyAutoChargeDealer;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
 import com.kaifantech.init.sys.qualifier.DefaultQualifier;
@@ -22,9 +22,9 @@ import com.kaifantech.util.log.AppFileLogger;
 
 @Component
 @Lazy(false)
-public class KfTestAutoTaskexeModule implements IAutoTaskexeModule {
+public class KfTestAutoModule implements IAutoModule {
 	@Autowired
-	private FancyTaskexeChargeDealer agvChargeDealer;
+	private FancyAutoChargeDealer agvChargeDealer;
 
 	@Autowired
 	private IFancyCurrentSiteService taskSiteInfoService;
