@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.init.sys.UdfBusinessInfo;
 import com.kaifantech.init.sys.BaseBusinessInfo;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.seq.ThreadID;
 
 @Component
@@ -21,15 +21,15 @@ public class KfTestIotConnectAsClientTimer {
 	private final Logger logger = Logger.getLogger(KfTestIotConnectAsClientTimer.class);
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_LIGHT_WORKER)
+	@Qualifier(UdfQualifier.DEFAULT_LIGHT_WORKER)
 	private IConnectWorker lightWorker;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_AUTO_DOOR_WORKER)
+	@Qualifier(UdfQualifier.DEFAULT_AUTO_DOOR_WORKER)
 	private IConnectWorker autoDoorWorker;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_LIFT_WORKER)
+	@Qualifier(UdfQualifier.DEFAULT_LIFT_WORKER)
 	private IConnectWorker liftWorker;
 
 	@Scheduled(cron = "0/1 * * * * ?")

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.component.log.AgvStatusDBLogger;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.log.AppFileLogger;
 import com.kaifantech.util.msg.iot.LiftMsgGetter;
 import com.calculatedfun.util.msg.AppMsg;
@@ -19,7 +19,7 @@ public class LiftCmdSender {
 	private AgvStatusDBLogger dbLogger;
 
 	@Inject
-	@Qualifier(DefaultQualifier.DEFAULT_LIFT_WORKER)
+	@Qualifier(UdfQualifier.DEFAULT_LIFT_WORKER)
 	private IConnectWorker worker;
 
 	public AppMsg send(Integer devId, String cmd) {

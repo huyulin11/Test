@@ -11,7 +11,7 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.component.service.iot.client.IIotClientService;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.socket.IConnect;
@@ -22,7 +22,7 @@ public class KfTestAutoDoorClientWorker implements IConnectWorker {
 	private Map<Integer, IConnect> map = new HashMap<Integer, IConnect>();
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_IOT_CLIENT_SERVICE)
+	@Qualifier(UdfQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	private IIotClientService iotClientService;
 
 	public synchronized void init() {

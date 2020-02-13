@@ -15,7 +15,7 @@ import com.kaifantech.component.dao.agv.info.AgvOpChargeDao;
 import com.kaifantech.component.service.taskexe.singletype.FancyAutoChargeDealer;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvSiteStatus;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
 import com.kaifantech.util.log.AppFileLogger;
@@ -30,7 +30,7 @@ public class KfTestAutoModule implements IAutoModule {
 	private IFancyCurrentSiteService taskSiteInfoService;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_AGV_INFO_DAO)
+	@Qualifier(UdfQualifier.DEFAULT_AGV_INFO_DAO)
 	private AgvInfoDao agvInfoDao;
 
 	@Autowired

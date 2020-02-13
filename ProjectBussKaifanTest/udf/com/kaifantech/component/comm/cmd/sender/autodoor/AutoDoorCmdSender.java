@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.component.log.AgvStatusDBLogger;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.log.AppFileLogger;
 import com.calculatedfun.util.msg.AppMsg;
 
@@ -18,7 +18,7 @@ public class AutoDoorCmdSender {
 	private AgvStatusDBLogger dbLogger;
 
 	@Inject
-	@Qualifier(DefaultQualifier.DEFAULT_AUTO_DOOR_WORKER)
+	@Qualifier(UdfQualifier.DEFAULT_AUTO_DOOR_WORKER)
 	private IConnectWorker worker;
 
 	public AppMsg send(Integer devId, String cmd) {

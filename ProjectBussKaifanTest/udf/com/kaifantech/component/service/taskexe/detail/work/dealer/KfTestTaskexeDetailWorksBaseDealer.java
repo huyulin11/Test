@@ -20,7 +20,7 @@ import com.kaifantech.component.service.taskexe.detail.op.ITaskexeDetailOpServic
 import com.kaifantech.component.service.taskexe.info.TaskexeInfoService;
 import com.kaifantech.component.service.tasksite.TaskSiteDevService;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
-import com.kaifantech.init.sys.qualifier.DefaultQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 
 public abstract class KfTestTaskexeDetailWorksBaseDealer {
 	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean taskexeDetail,
@@ -67,20 +67,20 @@ public abstract class KfTestTaskexeDetailWorksBaseDealer {
 	protected TaskSiteDevService taskSiteDevService;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_AGV_INFO_DAO)
+	@Qualifier(UdfQualifier.DEFAULT_AGV_INFO_DAO)
 	protected AgvInfoDao agvInfoDao;
 
 	@Autowired
 	protected ILightManager devManager;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_CTRL_MODULE)
+	@Qualifier(UdfQualifier.DEFAULT_CTRL_MODULE)
 	protected IFancyCtrlModule ctrlModule;
 
 	@Autowired
 	protected IFancyCurrentSiteService taskSiteInfoService;
 
 	@Autowired
-	@Qualifier(DefaultQualifier.DEFAULT_IOT_CLIENT_SERVICE)
+	@Qualifier(UdfQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	protected IIotClientService iotClientService;
 }
