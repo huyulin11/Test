@@ -18,7 +18,7 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.service.iot.client.KfTestIotClientService;
 import com.kaifantech.component.service.sysdic.SysDicService;
-import com.kaifantech.init.sys.AppBusinessInfo;
+import com.kaifantech.init.sys.UdfBusinessInfo;
 import com.kaifantech.init.sys.params.AppConfParameters;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.msg.iot.AutoDoorMsgGetter;
@@ -83,7 +83,7 @@ public class KfTestDataCacheTimer extends FancyDataCacheTimer {
 			infos.add(single);
 		}
 		if (!AppTool.isNull(infos)) {
-			AppFile.createFile(AppBusinessInfo.getProjJsonsPath() + "autoDoor/", "autodoor.json",
+			AppFile.createFile(UdfBusinessInfo.getProjJsonsPath() + "autoDoor/", "autodoor.json",
 					JSONArray.toJSON(infos).toString());
 		}
 	}
@@ -98,7 +98,7 @@ public class KfTestDataCacheTimer extends FancyDataCacheTimer {
 			infos.add(single);
 		}
 		if (!AppTool.isNull(infos)) {
-			AppFile.createFile(AppBusinessInfo.getProjJsonsPath() + "lift/", "lift.json",
+			AppFile.createFile(UdfBusinessInfo.getProjJsonsPath() + "lift/", "lift.json",
 					JSONArray.toJSON(infos).toString());
 		}
 	}
@@ -113,7 +113,7 @@ public class KfTestDataCacheTimer extends FancyDataCacheTimer {
 			infos.add(single);
 		}
 		if (!AppTool.isNull(infos)) {
-			AppFile.createFile(AppBusinessInfo.getProjJsonsPath() + "light/", "light.json",
+			AppFile.createFile(UdfBusinessInfo.getProjJsonsPath() + "light/", "light.json",
 					JSONArray.toJSON(infos).toString());
 		}
 	}

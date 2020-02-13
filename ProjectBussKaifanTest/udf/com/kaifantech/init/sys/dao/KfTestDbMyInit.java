@@ -7,22 +7,22 @@ import com.kaifantech.init.sys.params.AppConfKeys;
 
 public class KfTestDbMyInit extends BaseDao {
 	protected static void createDB(List<String> sqls) {
-		sqls.add("CREATE DATABASE `" + AppDbs.OP_DB + "`");
-		sqls.add("CREATE DATABASE `" + AppDbs.BUSS_DB + "`");
-		sqls.add("CREATE DATABASE `" + AppDbs.IOT_DB + "`");
-		sqls.add("CREATE DATABASE `" + AppDbs.DE_DB + "`");
-		sqls.add("CREATE DATABASE `" + AppDbs.WMS_DB + "`");
+		sqls.add("CREATE DATABASE `" + UdfDbs.OP_DB + "`");
+		sqls.add("CREATE DATABASE `" + UdfDbs.BUSS_DB + "`");
+		sqls.add("CREATE DATABASE `" + UdfDbs.IOT_DB + "`");
+		sqls.add("CREATE DATABASE `" + UdfDbs.DE_DB + "`");
+		sqls.add("CREATE DATABASE `" + UdfDbs.WMS_DB + "`");
 	}
 
 	protected static void truncate(List<String> sqls) {
-		sqls.add("truncate table " + AppDbs.CONF_DB + "." + AppConfKeys.WMS_ALLOC_LOCK);
+		sqls.add("truncate table " + UdfDbs.CONF_DB + "." + AppConfKeys.WMS_ALLOC_LOCK);
 		sqls.add("truncate table " + AppTables.WMS_RECEIPT_REQUEST_DETAIL);
 		sqls.add("truncate table " + AppTables.WMS_RECEIPT_REQUEST_MAIN);
 		sqls.add("truncate table " + AppTables.WMS_SHIPMENT_REQUEST_DETAIL);
 		sqls.add("truncate table " + AppTables.WMS_SHIPMENT_REQUEST_MAIN);
 		sqls.add("truncate table " + AppTables.WMS_TRANSFER_REQUEST_DETAIL);
 		sqls.add("truncate table " + AppTables.WMS_TRANSFER_REQUEST_MAIN);
-		sqls.add("truncate table " + AppDbs.CONF_DB + "." + AppConfKeys.COMBINED_TU_INFO);
+		sqls.add("truncate table " + UdfDbs.CONF_DB + "." + AppConfKeys.COMBINED_TU_INFO);
 		sqls.add("truncate table " + AppTables.ALLOC_TXM_INFO);
 		sqls.add("update " + AppTables.ALLOCATION_ITEM_INFO + " set num=0,status=1 where 1=1 ");
 	}

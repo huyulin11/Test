@@ -1,6 +1,6 @@
 package com.kaifantech.init.sys;
 
-public class AppBusinessInfo extends BaseBusinessInfo {
+public class UdfBusinessInfo extends BaseBusinessInfo {
 	public static final Clients CURRENT_CLIENT = Clients.KF;
 	public static final Projects CURRENT_PROJECT = Projects.KF_TEST;
 
