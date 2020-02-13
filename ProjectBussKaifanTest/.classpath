@@ -7,7 +7,7 @@
 	<classpathentry kind="src" path="WebContent/WEB-INF/jsp"/>
 	<classpathentry kind="src" path="iotUtilSerialTemp"/>
 	<classpathentry kind="src" path="iotFancyAgv"/>
-	<classpathentry kind="src" path="IotUtil"/>
+	<classpathentry kind="src" path="iotBase"/>
 	<classpathentry kind="src" path="BasicUtil"/>
 	<classpathentry kind="src" path="buss"/>
 	<classpathentry kind="src" path="conf"/>
