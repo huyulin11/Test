@@ -11,12 +11,12 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.component.service.iot.client.IIotClientService;
-import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.msg.agv.FancyAgvMsgCatcher;
 import com.kaifantech.util.msg.agv.FancyAgvMsgGetter;
-import com.kaifantech.util.socket.IConnect;
+import com.kaifantech.util.socket.base.IConnect;
 import com.kaifantech.util.socket.factory.client.KfTestClientFactory;
 
 @Service(KfTestQualifier.AGV_CLIENT_WORKER)

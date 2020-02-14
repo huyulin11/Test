@@ -11,11 +11,10 @@ import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.comm.worker.server.IServerWorker;
 import com.kaifantech.component.service.iot.client.IIotClientService;
 import com.kaifantech.init.sys.params.AppSysParameters;
-import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
+import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
-import com.kaifantech.util.serial.LaoAgvZigBeeNettySerialServer;
-import com.kaifantech.util.socket.IConnect;
+import com.kaifantech.util.socket.base.IConnect;
 import com.kaifantech.util.socket.netty.server.fancy.FancyAgvNettyServer;
 
 @Service(KfTestQualifier.AGV_SERVER_WORKER)
@@ -38,11 +37,7 @@ public class KfTestAgvSimulatorWorker implements IServerWorker {
 				}
 				try {
 					IConnect server = null;
-					if (IotDevType.AGV_FANCY_ZIGBEE.equals(iotClientBean.getDevtype())) {
-						IotClientBean clone = (IotClientBean) iotClientBean.clone();
-						clone.setPort("COM56");
-						server = new LaoAgvZigBeeNettySerialServer(clone);
-					} else if (IotDevType.AGV_FANCY_IP.equals(iotClientBean.getDevtype())) {
+					if (IotDevType.AGV_FANCY_IP.equals(iotClientBean.getDevtype())) {
 						server = new FancyAgvNettyServer(iotClientBean);
 						try {
 							server.init();
@@ -51,7 +46,7 @@ public class KfTestAgvSimulatorWorker implements IServerWorker {
 						}
 					}
 					map.put(iotClientBean.getId(), server);
-				} catch (CloneNotSupportedException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}

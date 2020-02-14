@@ -4,7 +4,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/udf"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/iotFancyAgv"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/iotUtilSerialTemp"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/udfComm"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/iotAcs"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/iotBase"/>
         <dependent-module archiveName="json-lib-2.4-jdk15.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ProjectModel/WebContent/WEB-INF/lib/json-lib-2.4-jdk15.jar">
