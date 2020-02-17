@@ -32,42 +32,32 @@
 		<link>
 			<name>BasicUtil</name>
 			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/BasicUtil</location>
+			<location>G:/work2018/src/git/ModuleBasicUtil/src/main/java</location>
 		</link>
 		<link>
 			<name>iotBase</name>
 			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/iotBase</location>
-		</link>
-		<link>
-			<name>Taskexe</name>
-			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/Taskexe</location>
+			<location>G:/work2018/src/git/ModuleIotBase/src/main/java</location>
 		</link>
 		<link>
 			<name>buss</name>
 			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/buss</location>
+			<location>G:/work2018/src/git/ModuleBasicUtil/src/main/buss</location>
 		</link>
 		<link>
 			<name>conf</name>
 			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/conf</location>
+			<location>G:/work2018/src/git/ModuleBasicUtil/src/main/resources</location>
 		</link>
 		<link>
 			<name>iotAcs</name>
 			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/iotAcs</location>
+			<location>G:/work2018/src/git/ModuleIotAcs/src/main/java</location>
 		</link>
 		<link>
 			<name>iotFancyAgv</name>
 			<type>2</type>
 			<location>G:/work2018/src/agvFancy/ModuleAgvFancy/JavaSrc/iotFancyAgv</location>
-		</link>
-		<link>
-			<name>iotTraffic</name>
-			<type>2</type>
-			<location>G:/work2018/src/git/ProjectModel/JavaSrc/iotTraffic</location>
 		</link>
 		<link>
 			<name>iotUtilSerialTemp</name>
