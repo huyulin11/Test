@@ -1,6 +1,6 @@
 package com.kaifantech.init.sys.qualifier;
 
-public class UdfQualifier extends FancyQualifier {
+public interface UdfQualifier extends FancyQualifier {
 	public static final String DEFAULT_SERVICE_PREFIX = KfTestQualifier.DEFAULT_SERVICE_PREFIX;
 
 	public static final String DEFAULT_TASKEXE_MODULE = FancyQualifier.TASKEXE_MODULE;
