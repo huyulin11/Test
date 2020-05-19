@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.kaifantech.component.comm.worker.client.IConnectWorker;
 import com.kaifantech.init.sys.UdfBusinessInfo;
-import com.kaifantech.init.sys.BaseBusinessInfo;
+import com.kaifantech.init.sys.AppBusinessInfo;
 import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.seq.ThreadID;
 
@@ -34,7 +34,7 @@ public class KfTestIotConnectAsClientTimer {
 
 	@Scheduled(cron = "0/1 * * * * ?")
 	public void resolute() {
-		if (UdfBusinessInfo.CURRENT_CLIENT.equals(BaseBusinessInfo.Clients.YUFENG)) {
+		if (UdfBusinessInfo.CURRENT_CLIENT.equals(AppBusinessInfo.Clients.YUFENG)) {
 			return;
 		}
 		if (!isRunning) {
