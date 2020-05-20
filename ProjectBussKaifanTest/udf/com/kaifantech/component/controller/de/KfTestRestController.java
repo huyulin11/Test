@@ -145,7 +145,7 @@ public class KfTestRestController {
 					agvOpInitDao.workOverForce(agvId);
 				}
 			} else if (AgvTaskType.CONFIRM.equals(tasktype)) {
-				AppCache.worker().hset("CONFIRM", agvId, "TRUE");
+				AppCache.worker().hset("CONFIRM", agvId, true);
 			} else if (AgvTaskType.GOTO_INIT.equals(tasktype)) {
 				agvOpInitDao.commandToInit(agvId);
 			} else if (AgvTaskType.RE_PATH.equals(tasktype)) {

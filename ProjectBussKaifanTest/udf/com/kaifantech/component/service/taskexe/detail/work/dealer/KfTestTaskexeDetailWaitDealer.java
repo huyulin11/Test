@@ -14,6 +14,7 @@ import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.cache.manager.AppCache;
 import com.kaifantech.component.dao.agv.info.AgvOpWaitDao;
+import com.kaifantech.init.sys.params.AppBaseParameters;
 
 @Service
 public class KfTestTaskexeDetailWaitDealer extends KfTestTaskexeDetailWorksBaseDealer {
@@ -27,11 +28,11 @@ public class KfTestTaskexeDetailWaitDealer extends KfTestTaskexeDetailWorksBaseD
 				agvOpWaitDao.reach(taskexeBean.getAgvId());
 				taskexeDetailOpService.send(taskexeDetail);
 			} else if (taskexeDetail.isSend()) {
-				if ("TRUE".equals(AppCache.worker().get("CONFIRM", taskexeBean.getAgvId()))) {
+				if (AppBaseParameters.flag(AppCache.worker().get("CONFIRM", taskexeBean.getAgvId()))) {
 					TaskexeDetailBean pastDetail = taskexeDetail.getPast();
 					TaskexeDetailBean nextDetail = taskexeDetail.getNext();
 					if (AppTool.isNull(nextDetail) && !AppTool.isNull(pastDetail)) {
-						AppCache.worker().hset("CONFIRM", taskexeBean.getAgvId(), "FALSE");
+						AppCache.worker().hset("CONFIRM", taskexeBean.getAgvId(), false);
 						taskexeDetailOpService.over(taskexeDetail);
 						agvOpWaitDao.over(taskexeBean.getAgvId());
 					}
@@ -59,7 +60,7 @@ public class KfTestTaskexeDetailWaitDealer extends KfTestTaskexeDetailWorksBaseD
 							}
 						}
 					}
-					AppCache.worker().hset("CONFIRM", taskexeBean.getAgvId(), "FALSE");
+					AppCache.worker().hset("CONFIRM", taskexeBean.getAgvId(), false);
 					taskexeDetailOpService.over(taskexeDetail);
 					agvOpWaitDao.over(taskexeBean.getAgvId());
 				}
