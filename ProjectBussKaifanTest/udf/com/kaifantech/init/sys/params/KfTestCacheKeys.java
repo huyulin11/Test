@@ -1,6 +1,6 @@
 package com.kaifantech.init.sys.params;
 
-public class KfTestCacheKeys extends CacheKeys {
+public class KfTestCacheKeys extends AppCacheKeys {
 	public static String autoDoorMsgList(Integer devId) {
 		String keyVal = "AUTODOOR" + separator + "MSG_LIST";
 		return getSocketKey(devId, keyVal);

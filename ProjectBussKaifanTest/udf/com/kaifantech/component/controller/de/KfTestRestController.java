@@ -21,7 +21,7 @@ import com.kaifantech.component.dao.agv.info.AgvOpTransportDao;
 import com.kaifantech.component.log.AgvStatusDBLogger;
 import com.kaifantech.component.service.iot.client.IIotClientService;
 import com.kaifantech.component.service.status.agv.AgvStatusService;
-import com.kaifantech.component.service.taskexe.add.ITaskexeAddService;
+import com.kaifantech.component.service.taskexe.add.IFancyTaskexeAddService;
 import com.kaifantech.component.service.taskexe.info.TaskexeInfoService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
 import com.kaifantech.init.sys.params.AppSysParameters;
@@ -37,7 +37,7 @@ import com.kaifantech.util.thread.ThreadTool;
 public class KfTestRestController {
 	@Autowired
 	@Qualifier(UdfQualifier.DEFAULT_TASKEXE_ADD_SERVICE)
-	private ITaskexeAddService taskexeAddService;
+	private IFancyTaskexeAddService taskexeAddService;
 
 	@Autowired
 	private AgvStatusService agvStatusService;
