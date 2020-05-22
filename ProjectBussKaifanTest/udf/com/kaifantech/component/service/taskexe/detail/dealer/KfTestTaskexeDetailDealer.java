@@ -18,7 +18,7 @@ import com.kaifantech.util.constant.taskexe.ArrivedActType;
 import com.kaifantech.util.constant.taskexe.WmsDetailOpFlag;
 
 @Service
-public class KfTestTaskexeDetailDealer implements ITaskexeDetailDealer {
+public class KfTestTaskexeDetailDealer extends AcsTaskexeDetailDealer<FancyAgvMsgBean> {
 	public boolean dealDetail(TaskexeBean taskexeBean, FancyAgvMsgBean fancyAgvMsgBean, TaskexeDetailBean taskexeDetail)
 			throws Exception {
 		if (ArrivedActType.WAIT.equals(taskexeDetail.getArrivedact())
