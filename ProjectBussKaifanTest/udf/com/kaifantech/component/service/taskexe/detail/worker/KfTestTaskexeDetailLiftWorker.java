@@ -10,22 +10,22 @@ import org.springframework.stereotype.Service;
 import com.calculatedfun.util.AppTool;
 import com.calculatedfun.util.msg.AppMsg;
 import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
-import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
+import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.cache.manager.AppCache;
 import com.kaifantech.component.comm.manager.ILiftManager;
 import com.kaifantech.component.comm.manager.agv.IFancyAgvManager;
 import com.kaifantech.component.dao.agv.info.AgvOpLiftDao;
-import com.kaifantech.init.sys.params.KfTestCacheKeys;
 import com.kaifantech.init.sys.params.AppConfParameters;
 import com.kaifantech.init.sys.params.AppSysParameters;
+import com.kaifantech.init.sys.params.KfTestCacheKeys;
 import com.kaifantech.util.thread.ThreadTool;
 
 @Service
 public class KfTestTaskexeDetailLiftWorker extends KfTestTaskexeDetailBaseWorker {
-	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean thisDetail,
+	public void work(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean thisDetail,
 			List<TaskexeDetailWorksBean> works) throws Exception {
 		if (thisDetail.matchThisSite(fancyAgvMsgBean.currentSite())) {
 			AppSysParameters.setTaskstop(taskexeBean.getAgvId(), true);

@@ -21,7 +21,7 @@ public class KfTestTaskexeDetailWaitWorker extends KfTestTaskexeDetailBaseWorker
 	@Autowired
 	private AgvOpWaitDao agvOpWaitDao;
 
-	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean taskexeDetail,
+	public void work(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean taskexeDetail,
 			List<TaskexeDetailWorksBean> works) throws Exception {
 		if (taskexeDetail.matchThisSite(fancyAgvMsgBean.currentSite())) {
 			if (taskexeDetail.isNew()) {

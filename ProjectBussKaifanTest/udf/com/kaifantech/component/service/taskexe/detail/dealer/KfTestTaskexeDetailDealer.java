@@ -25,10 +25,10 @@ public class KfTestTaskexeDetailDealer extends AcsTaskexeDetailDealer<FancyAgvMs
 				|| ArrivedActType.LIFT_READY.equals(taskexeDetail.getArrivedact())) {
 			List<TaskexeDetailWorksBean> works = taskexeDetailWorksService.getWorks(taskexeDetail);
 			if (ArrivedActType.WAIT.equals(taskexeDetail.getArrivedact())) {
-				taskexeDetailWaitDealer.when(fancyAgvMsgBean, taskexeBean, taskexeDetail, works);
+				taskexeDetailWaitDealer.work(fancyAgvMsgBean, taskexeBean, taskexeDetail, works);
 				return false;
 			} else if (ArrivedActType.LIFT_READY.equals(taskexeDetail.getArrivedact())) {
-				taskexeDetailWorksLiftDealer.when(fancyAgvMsgBean, taskexeBean, taskexeDetail, works);
+				taskexeDetailWorksLiftDealer.work(fancyAgvMsgBean, taskexeBean, taskexeDetail, works);
 				return false;
 			}
 		}

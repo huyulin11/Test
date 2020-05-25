@@ -1,7 +1,5 @@
 package com.kaifantech.component.service.taskexe.detail.worker;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -9,8 +7,6 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
 import com.kaifantech.bean.taskexe.TaskexeBean;
-import com.kaifantech.bean.taskexe.TaskexeDetailBean;
-import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.component.comm.manager.ILightManager;
 import com.kaifantech.component.dao.agv.info.AgvInfoDao;
@@ -22,11 +18,7 @@ import com.kaifantech.component.service.tasksite.TaskSiteDevService;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.qualifier.UdfQualifier;
 
-public abstract class KfTestTaskexeDetailBaseWorker {
-	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean taskexeDetail,
-			List<TaskexeDetailWorksBean> works) throws Exception {
-	}
-
+public abstract class KfTestTaskexeDetailBaseWorker implements ITaskexeDetailWorker<FancyAgvMsgBean> {
 	protected boolean isAutodoorOccupy() throws Exception {
 		for (IotClientBean agv : iotClientService.getAgvCacheList()) {
 			TaskSiteInfoBean thisSite = taskSiteInfoService.getCurrentSite(agv.getId());
