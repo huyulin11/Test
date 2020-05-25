@@ -1,4 +1,4 @@
-package com.kaifantech.component.service.taskexe.detail.work.dealer;
+package com.kaifantech.component.service.taskexe.detail.worker;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import com.kaifantech.component.service.tasksite.TaskSiteDevService;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.qualifier.UdfQualifier;
 
-public abstract class KfTestTaskexeDetailWorksBaseDealer {
+public abstract class KfTestTaskexeDetailBaseWorker {
 	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean taskexeDetail,
 			List<TaskexeDetailWorksBean> works) throws Exception {
 	}

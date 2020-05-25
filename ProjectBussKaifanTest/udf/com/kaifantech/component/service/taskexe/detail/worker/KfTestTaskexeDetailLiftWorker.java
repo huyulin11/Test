@@ -1,4 +1,4 @@
-package com.kaifantech.component.service.taskexe.detail.work.dealer;
+package com.kaifantech.component.service.taskexe.detail.worker;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +24,7 @@ import com.kaifantech.init.sys.params.AppSysParameters;
 import com.kaifantech.util.thread.ThreadTool;
 
 @Service
-public class KfTestTaskexeDetailWorksLiftDealer extends KfTestTaskexeDetailWorksBaseDealer {
+public class KfTestTaskexeDetailLiftWorker extends KfTestTaskexeDetailBaseWorker {
 	public void when(FancyAgvMsgBean fancyAgvMsgBean, TaskexeBean taskexeBean, TaskexeDetailBean thisDetail,
 			List<TaskexeDetailWorksBean> works) throws Exception {
 		if (thisDetail.matchThisSite(fancyAgvMsgBean.currentSite())) {

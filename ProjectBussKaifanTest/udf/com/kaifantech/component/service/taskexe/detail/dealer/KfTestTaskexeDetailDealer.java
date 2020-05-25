@@ -9,9 +9,9 @@ import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;
-import com.kaifantech.component.service.taskexe.detail.work.IFancyTaskexeDetailWorksService;
-import com.kaifantech.component.service.taskexe.detail.work.dealer.KfTestTaskexeDetailWaitDealer;
-import com.kaifantech.component.service.taskexe.detail.work.dealer.KfTestTaskexeDetailWorksLiftDealer;
+import com.kaifantech.component.service.taskexe.detail.work.ITaskexeDetailWorksInfoService;
+import com.kaifantech.component.service.taskexe.detail.worker.KfTestTaskexeDetailLiftWorker;
+import com.kaifantech.component.service.taskexe.detail.worker.KfTestTaskexeDetailWaitWorker;
 import com.kaifantech.init.sys.params.AppSysParameters;
 import com.kaifantech.mappings.taskexe.TaskexeDetailMapper;
 import com.kaifantech.util.constant.taskexe.ArrivedActType;
@@ -67,11 +67,11 @@ public class KfTestTaskexeDetailDealer extends AcsTaskexeDetailDealer<FancyAgvMs
 	private TaskexeDetailMapper taskexeDetailMapper;
 
 	@Autowired
-	private KfTestTaskexeDetailWaitDealer taskexeDetailWaitDealer;
+	private KfTestTaskexeDetailWaitWorker taskexeDetailWaitDealer;
 
 	@Autowired
-	private KfTestTaskexeDetailWorksLiftDealer taskexeDetailWorksLiftDealer;
+	private KfTestTaskexeDetailLiftWorker taskexeDetailWorksLiftDealer;
 
 	@Autowired
-	private IFancyTaskexeDetailWorksService taskexeDetailWorksService;
+	private ITaskexeDetailWorksInfoService taskexeDetailWorksService;
 }

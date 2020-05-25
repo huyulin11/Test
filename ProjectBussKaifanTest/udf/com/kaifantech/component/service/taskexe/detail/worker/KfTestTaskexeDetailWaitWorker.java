@@ -1,4 +1,4 @@
-package com.kaifantech.component.service.taskexe.detail.work.dealer;
+package com.kaifantech.component.service.taskexe.detail.worker;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.kaifantech.component.dao.agv.info.AgvOpWaitDao;
 import com.kaifantech.init.sys.params.AppBaseParameters;
 
 @Service
-public class KfTestTaskexeDetailWaitDealer extends KfTestTaskexeDetailWorksBaseDealer {
+public class KfTestTaskexeDetailWaitWorker extends KfTestTaskexeDetailBaseWorker {
 	@Autowired
 	private AgvOpWaitDao agvOpWaitDao;
 
