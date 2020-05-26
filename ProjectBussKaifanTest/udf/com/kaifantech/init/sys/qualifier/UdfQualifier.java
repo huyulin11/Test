@@ -30,7 +30,7 @@ public interface UdfQualifier {
 
 	public static final String DEFAULT_FETCH_OP_SERVICE = AcsQualifier.FETCH_OP_SERVICE;
 	public static final String DEFAULT_DELIVER_OP_SERVICE = AcsQualifier.DELIVER_OP_SERVICE;
-	public static final String DEFAULT_ALLOC_AMOUNT_SERVICE = AcsQualifier.ALLOC_AMOUNT_SERVICE;
+	public static final String DEFAULT_ALLOC_AMOUNT_SERVICE = WmsQualifier.ALLOC_AMOUNT_SERVICE;
 	public static final String DEFAULT_TASK_SITE_INFO_SERVICE = AcsQualifier.TASK_SITE_INFO_SERVICE;
 	public static final String DEFAULT_TASKEXE_DETAIL_DEALER = AcsQualifier.TASKEXE_DETAIL_DEALER;
 
