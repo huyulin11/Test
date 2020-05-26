@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
+import com.kaifantech.component.cache.worker.AcsBeanFactory;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvMoveStatus;
 import com.kaifantech.util.thread.ThreadTool;
@@ -15,7 +16,7 @@ import com.kaifantech.util.thread.ThreadTool;
 @Service(KfTestQualifier.CTRL_MODULE)
 public class KfTestCtrlModule extends FancyCtrlModule {
 	protected void control(FancyAgvMsgBean agvMsgBean, IotClientBean agvBean) {
-		if (!AgvMoveStatus.CONTINUE.equals(agvInfoDao.getMoveStatus(agvBean.getId()))) {
+		if (!AgvMoveStatus.CONTINUE.equals(AcsBeanFactory.agvInfoDao().getMoveStatus(agvBean.getId()))) {
 			pause(agvMsgBean.agvId());
 		} else {
 			if (!agvMsgBean.isAgvDriving()) {

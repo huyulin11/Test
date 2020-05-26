@@ -3,19 +3,17 @@ package com.kaifantech.component.service.taskexe.auto;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import com.calculatedfun.util.AppTool;
 import com.calculatedfun.util.msg.AppMsg;
 import com.kaifantech.bean.info.agv.AgvInfoBean;
-import com.kaifantech.component.dao.agv.info.AgvInfoDao;
+import com.kaifantech.component.cache.worker.AcsBeanFactory;
 import com.kaifantech.component.dao.agv.info.AgvOpChargeDao;
 import com.kaifantech.component.service.taskexe.singletype.AcsAutoChargeDealer;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
-import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvSiteStatus;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
 import com.kaifantech.util.log.AppFileLogger;
@@ -25,14 +23,8 @@ import com.kaifantech.util.log.AppFileLogger;
 public class KfTestAutoModule implements IAutoModule {
 	@Autowired
 	private AcsAutoChargeDealer agvChargeDealer;
-
 	@Autowired
 	private IFancyCurrentSiteService taskSiteInfoService;
-
-	@Autowired
-	@Qualifier(UdfQualifier.DEFAULT_AGV_INFO_DAO)
-	private AgvInfoDao agvInfoDao;
-
 	@Autowired
 	private AgvOpChargeDao agvOpChargeDao;
 
@@ -46,7 +38,7 @@ public class KfTestAutoModule implements IAutoModule {
 
 	private void autoCharge() {
 		if (AppAutoParameters.isAutoCharge()) {
-			List<AgvInfoBean> list = agvInfoDao.getList();
+			List<AgvInfoBean> list = AcsBeanFactory.agvInfoDao().getList();
 			for (AgvInfoBean agv : list) {
 				if (AgvSiteStatus.INIT.equals(agv.getSitestatus()) && AgvTaskType.FREE.equals(agv.getTaskstatus())) {
 					Integer currentSiteId = taskSiteInfoService.getCurrentSiteId(agv.getId());
@@ -67,7 +59,7 @@ public class KfTestAutoModule implements IAutoModule {
 	}
 
 	private synchronized void toCharge() {
-		List<AgvInfoBean> list = agvInfoDao.getChargedList();
+		List<AgvInfoBean> list = AcsBeanFactory.agvInfoDao().getChargedList();
 		AppMsg msg = AppMsg.fail();
 		for (AgvInfoBean agv : list) {
 			if ((AgvSiteStatus.INIT.equals(agv.getSitestatus()) && AgvTaskType.GOTO_CHARGE.equals(agv.getTaskstatus()))

@@ -6,31 +6,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.bean.taskexe.FancyTaskexeBean;
-import com.kaifantech.component.dao.agv.info.AgvInfoDao;
 import com.kaifantech.component.service.pi.ctrl.work.FancyPiInfoService;
-import com.kaifantech.init.sys.qualifier.UdfQualifier;
 import com.kaifantech.util.agv.msg.PiCommand;
 import com.kaifantech.util.log.AppFileLogger;
 
 @Component
 public class KfTestPiCtrlDealer implements IPiCtrlDealer {
-
 	@Autowired
 	private FancyPiInfoService piInfoService;
-
 	private Map<Object[], Object[]> clashAreasFull = null;
-
 	private Map<Object[], Object[]> clashAreasRev = null;
-
-	@Autowired
-	@Qualifier(UdfQualifier.DEFAULT_AGV_INFO_DAO)
-	private AgvInfoDao agvInfoDao;
 
 	public PiCommand check2Agvs(IotClientBean one, IotClientBean another) throws Exception {
 		PiCommand command = new PiCommand();

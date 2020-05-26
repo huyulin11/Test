@@ -9,7 +9,6 @@ import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.component.comm.manager.ILightManager;
-import com.kaifantech.component.dao.agv.info.AgvInfoDao;
 import com.kaifantech.component.service.ctrl.deal.IFancyCtrlModule;
 import com.kaifantech.component.service.iot.client.IIotClientService;
 import com.kaifantech.component.service.taskexe.detail.op.ITaskexeDetailOpService;
@@ -51,27 +50,17 @@ public abstract class KfTestTaskexeDetailBaseWorker implements ITaskexeDetailWor
 
 	@Autowired
 	private TaskexeInfoService taskexeInfoService;
-
 	@Autowired
 	protected ITaskexeDetailOpService taskexeDetailOpService;
-
 	@Autowired
 	protected TaskSiteDevService taskSiteDevService;
-
-	@Autowired
-	@Qualifier(UdfQualifier.DEFAULT_AGV_INFO_DAO)
-	protected AgvInfoDao agvInfoDao;
-
 	@Autowired
 	protected ILightManager devManager;
-
 	@Autowired
 	@Qualifier(UdfQualifier.DEFAULT_CTRL_MODULE)
 	protected IFancyCtrlModule ctrlModule;
-
 	@Autowired
 	protected IFancyCurrentSiteService taskSiteInfoService;
-
 	@Autowired
 	@Qualifier(UdfQualifier.DEFAULT_IOT_CLIENT_SERVICE)
 	protected IIotClientService iotClientService;
