@@ -7,7 +7,6 @@ public interface KfTestQualifier extends FancyQualifier {
 
 	public static final String TASKEXE_MODULE = DEFAULT_SERVICE_PREFIX + "TaskexeModule";
 	public static final String CTRL_MODULE = DEFAULT_SERVICE_PREFIX + "CtrlModule";
-	public static final String AGV_SERVER_WORKER = DEFAULT_SERVICE_PREFIX + "AgvServerWorker";
 
 	public static final String AGV_CLIENT_WORKER = DEFAULT_SERVICE_PREFIX + "AgvClientWorker";
 	public static final String AUTO_DOOR_CLIENT_WORKER = DEFAULT_SERVICE_PREFIX + "AutoDoorClientWorker";
