@@ -10,7 +10,7 @@ import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 
 @Service(KfTestQualifier.LOCK_WATCHER)
-public class KfTestLockWatcher extends AbsAcsLocksWatcher<FancyAgvMsgBean> {
+public class KfTestLockWatcher extends AbsAcsLockWatcher<FancyAgvMsgBean> {
 	@Override
 	public void watch(FancyAgvMsgBean agvMsg, TaskexeBean taskexe, List<TaskexeDetailBean> details) throws Exception {
 	}
