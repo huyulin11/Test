@@ -40,4 +40,5 @@ public interface UdfQualifier extends FatherQualifier {
 	public static final String DEFAULT_PAPER_SERVICE = BaseQualifier.PAPER_SERVICE;
 	public static final String DEFAULT_APP_CONF_SERVICE = BaseQualifier.APP_CONF_SERVICE;
 	public static final String DEFAULT_AGV_INFO_DAO = BaseQualifier.AGV_INFO_DAO;
+	public static final String DEFAULT_LOCK_WATCHER = KfTestQualifier.LOCK_WATCHER;
 }

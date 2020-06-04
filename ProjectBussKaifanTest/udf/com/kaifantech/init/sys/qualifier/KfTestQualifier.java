@@ -16,4 +16,5 @@ public interface KfTestQualifier extends FancyQualifier {
 	public static final String IOT_CLIENT_SERVICE = DEFAULT_SERVICE_PREFIX + "IotClientService";
 
 	public static final String TASKEXE_DETAIL_JOBS_SERVICE = DEFAULT_SERVICE_PREFIX + "TaskexeDetailJobsService";
+	public static final String LOCK_WATCHER = DEFAULT_SERVICE_PREFIX + "LockWatcher";
 }
