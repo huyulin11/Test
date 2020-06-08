@@ -14,16 +14,16 @@ import com.kaifantech.util.thread.ThreadTool;
 
 @Component
 @Lazy(false)
-public class KfTestIotConnectAsServerTimer {
+public class KfTestIotServerTimer {
 	private static boolean isRunning = false;
 	private static String timerType = "IOT_SERVER设备连接器";
-	private final Logger logger = Logger.getLogger(KfTestIotConnectAsServerTimer.class);
+	private final Logger logger = Logger.getLogger(KfTestIotServerTimer.class);
 
 	@Autowired
 	@Qualifier(UdfQualifier.DEFAULT_AGV_SERVER_WORKER)
 	private IConnectWorker agvServerWorker;
 
-	public KfTestIotConnectAsServerTimer() {
+	public KfTestIotServerTimer() {
 		logger.info(timerType + "开始启动！");
 	}
 

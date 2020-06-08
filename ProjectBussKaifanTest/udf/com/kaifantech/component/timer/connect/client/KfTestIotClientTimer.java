@@ -15,10 +15,10 @@ import com.kaifantech.util.seq.ThreadID;
 
 @Component
 @Lazy(false)
-public class KfTestIotConnectAsClientTimer {
+public class KfTestIotClientTimer {
 	private static boolean isRunning = false;
 	private static String timerType = "IOT_CLIENT_SOCKET设备连接器";
-	private final Logger logger = Logger.getLogger(KfTestIotConnectAsClientTimer.class);
+	private final Logger logger = Logger.getLogger(KfTestIotClientTimer.class);
 
 	@Autowired
 	@Qualifier(UdfQualifier.DEFAULT_LIGHT_WORKER)
