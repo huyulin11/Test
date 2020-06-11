@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
+import com.kaifantech.bean.msg.agv.FancyAgvMsgBean;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailWorksBean;

@@ -4,7 +4,7 @@ package com.kaifantech.component.service.ctrl.deal;
 import org.springframework.stereotype.Service;
 
 import com.kaifantech.bean.iot.client.IotClientBean;
-import com.kaifantech.bean.msg.fancy.agv.FancyAgvMsgBean;
+import com.kaifantech.bean.msg.agv.FancyAgvMsgBean;
 import com.kaifantech.component.cache.worker.AcsBeanFactory;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvMoveStatus;

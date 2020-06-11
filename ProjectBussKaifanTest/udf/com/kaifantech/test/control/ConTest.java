@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.calculatedfun.util.msg.AppMsg;
-import com.kaifantech.bean.msg.fancy.agv.FancyAgvCacheCommand;
+import com.kaifantech.bean.msg.agv.FancyAgvCacheCommand;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
 import com.kaifantech.component.comm.manager.agv.IFancyAgvManager;
 import com.kaifantech.component.service.iot.client.IIotClientService;
