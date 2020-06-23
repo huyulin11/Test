@@ -9,6 +9,7 @@ import com.calculatedfun.util.AppTool;
 import com.kaifantech.bean.taskexe.TaskexeBean;
 import com.kaifantech.bean.taskexe.TaskexeDetailBean;
 import com.kaifantech.bean.tasksite.TaskSiteInfoBean;
+import com.kaifantech.init.sys.params.AppCol;
 import com.kaifantech.init.sys.qualifier.KfTestQualifier;
 import com.kaifantech.util.constant.taskexe.ArrivedActType;
 import com.kaifantech.util.constant.taskexe.ctrl.AgvTaskType;
@@ -35,7 +36,7 @@ public class KfTestTaskexeDetailJobsService extends FancyTaskexeDetailJobsServic
 		List<TaskexeDetailBean> tmpTaskexeDetailList = new ArrayList<>();
 		TaskSiteInfoBean tasksiteBean;
 		TaskexeDetailBean taskexeDetail;
-		Integer toSiteId = taskexeBean.getJsonItem("TO", Integer.class);
+		Integer toSiteId = taskexeBean.getJsonItem(AppCol.to, Integer.class);
 		tasksiteBean = currentSiteService.getBean(toSiteId);
 		taskexeDetail = new TaskexeDetailBean(taskexeBean.getTaskexesid(), tasksiteBean);
 		taskexeDetail.setArrivedact(ArrivedActType.SLOW_STOP);
@@ -47,7 +48,7 @@ public class KfTestTaskexeDetailJobsService extends FancyTaskexeDetailJobsServic
 		List<TaskexeDetailBean> tmpTaskexeDetailList = new ArrayList<>();
 		TaskSiteInfoBean tasksiteBean;
 		TaskexeDetailBean taskexeDetail;
-		String toSiteStr = taskexeBean.getJsonItem("TO");
+		String toSiteStr = taskexeBean.getJsonItem(AppCol.to);
 		if (AppTool.isNull(toSiteStr)) {
 			return null;
 		}
