@@ -28,7 +28,7 @@ public class KfTestAutoModule implements IAutoModule {
 	@Autowired
 	private AgvOpChargeDao agvOpChargeDao;
 
-	public synchronized void doWork() {
+	public synchronized void arrangeTask() {
 		autoCharge();
 		toCharge();
 		toInit();
