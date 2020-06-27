@@ -1,8 +1,6 @@
 package com.kaifantech.component.service.taskexe.detail.worker;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +16,6 @@ import com.kaifantech.cache.manager.AppCache;
 import com.kaifantech.component.comm.manager.ILiftManager;
 import com.kaifantech.component.comm.manager.agv.IFancyAgvManager;
 import com.kaifantech.component.dao.agv.info.AgvOpLiftDao;
-import com.kaifantech.init.sys.params.AppConfParameters;
 import com.kaifantech.init.sys.params.AppSysParameters;
 import com.kaifantech.init.sys.params.KfTestCacheKeys;
 import com.kaifantech.util.thread.ThreadTool;
@@ -122,34 +119,11 @@ public class KfTestTaskexeDetailLiftWorker extends KfTestTaskexeDetailBaseWorker
 		}
 	}
 
-	private void loopSearch(TaskexeBean taskexeBean, Integer devId) {
-		Boolean flag = isRunning.get(devId);
-		if (AppTool.isNull(flag) || !flag) {
-			isRunning.put(devId, true);
-			while (true) {
-				try {
-					devManager.generalSearch(devId);
-					ThreadTool.sleep(6 * AppConfParameters.getGeneralSearchInteval());
-					if (!isLiftOccupy()) {
-						isRunning.put(devId, false);
-						break;
-					}
-				} catch (Exception e) {
-				}
-			}
-		}
-	}
-
 	private static final String IN_LIFT = "0";
-
-	private Map<Integer, Boolean> isRunning = new HashMap<>();
-
 	@Autowired
 	protected IFancyAgvManager agvManager;
-
 	@Autowired
 	private ILiftManager devManager;
-
 	@Autowired
 	private AgvOpLiftDao agvOpLiftDao;
 }
