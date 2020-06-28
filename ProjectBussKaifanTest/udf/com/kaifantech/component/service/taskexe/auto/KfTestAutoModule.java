@@ -10,7 +10,7 @@ import com.calculatedfun.util.AppTool;
 import com.calculatedfun.util.msg.AppMsg;
 import com.kaifantech.bean.info.agv.AgvInfoBean;
 import com.kaifantech.component.cache.worker.AcsBeanFactory;
-import com.kaifantech.component.dao.agv.info.AgvOpChargeDao;
+import com.kaifantech.component.dao.agv.info.AgvOpChargeGotoDao;
 import com.kaifantech.component.service.taskexe.singletype.AcsAutoChargeDealer;
 import com.kaifantech.component.service.tasksite.info.IFancyCurrentSiteService;
 import com.kaifantech.init.sys.params.AppAutoParameters;
@@ -26,7 +26,7 @@ public class KfTestAutoModule implements IAutoModule {
 	@Autowired
 	private IFancyCurrentSiteService taskSiteInfoService;
 	@Autowired
-	private AgvOpChargeDao agvOpChargeDao;
+	private AgvOpChargeGotoDao agvOpChargeGotoDao;
 
 	public synchronized void arrangeTask() {
 		autoCharge();
@@ -45,7 +45,7 @@ public class KfTestAutoModule implements IAutoModule {
 					if (AgvInfoBean.NEED_CHARGE.equals(agv.getBattery())
 							&& AppTool.equals(currentSiteId, 28, 53, 62, 89, 105)) {
 						AppFileLogger.warning(agv.getId() + "号AGV电量过低，系统自动安排其去充电！");
-						agvOpChargeDao.commandToCharge(agv.getId());
+						agvOpChargeGotoDao.command(agv.getId());
 					}
 				}
 			}
