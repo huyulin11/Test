@@ -19,7 +19,8 @@ import com.kaifantech.bean.iot.client.IotClientBean;
 import com.kaifantech.component.service.iot.client.KfTestIotClientService;
 import com.kaifantech.component.service.sysdic.SysDicService;
 import com.kaifantech.init.sys.UdfBusinessInfo;
-import com.kaifantech.init.sys.params.AppConfParameters;
+import com.kaifantech.init.sys.params.AppCacheKeys;
+import com.kaifantech.init.sys.params.AppParamPool;
 import com.kaifantech.util.constant.taskexe.ctrl.IotDevType;
 import com.kaifantech.util.msg.iot.AutoDoorMsgGetter;
 import com.kaifantech.util.msg.iot.LiftMsgGetter;
@@ -65,7 +66,7 @@ public class KfTestDataCacheTimer extends FancyDataCacheTimer {
 				try {
 					for (IotClientBean agvBean : iotClientService.getAgvCacheList()) {
 						agvManager.generalSearch(agvBean.getId());
-						ThreadTool.sleep(AppConfParameters.getGeneralSearchInteval());
+						ThreadTool.sleep(AppParamPool.intVal(AppCacheKeys.AGV_GENERAL_SEARCH_INTEVAL, 1000));
 					}
 				} catch (Exception e) {
 				}
